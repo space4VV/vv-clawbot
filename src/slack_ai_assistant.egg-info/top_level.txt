@@ -1,0 +1,10 @@
+agents
+channels
+config
+mcp
+memory
+memory-ai
+rag
+slack_ai_assistant
+tools
+utils

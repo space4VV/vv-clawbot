@@ -1,0 +1,651 @@
+2026-03-11 12:41:19,266 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:41:19,266 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 12:41:19,266 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:41:19,266 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 12:41:19,266 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 12:41:19,271 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 12:41:19,271 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 12:41:19,271 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 12:41:19,271 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 12:41:19,271 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 12:41:20,156 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 12:41:20,156 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 12:41:20,156 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 12:41:20,156 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 12:41:20,156 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 12:41:20,156 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 12:41:20,157 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 12:41:20,157 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 12:41:20,157 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 12:41:20,157 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 12:41:20,157 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 12:41:20,159 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 12:41:20,160 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 12:41:20,160 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 12:41:20,160 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 12:41:20,160 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 12:41:20,160 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 12:41:20,160 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 12:41:20,360 [ERROR] slack-ai-assistant.slack: Failed to start Slack app: The request to the Slack API failed. (url: https://slack.com/api/auth.test)
+The server responded with: {'ok': False, 'error': 'not_authed'}
+2026-03-11 12:41:20,360 [ERROR] slack-ai-assistant: Failed to start application: The request to the Slack API failed. (url: https://slack.com/api/auth.test)
+The server responded with: {'ok': False, 'error': 'not_authed'}
+Traceback (most recent call last):
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/src/slack_ai_assistant/main.py", line 78, in main
+    await slack_module.start_slack_app()
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/src/slack_ai_assistant/channels/slack.py", line 318, in start_slack_app
+    client.client.auth_test()
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/client.py", line 2132, in auth_test
+    return self.api_call("auth.test", params=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/base_client.py", line 169, in api_call
+    return self._sync_send(api_url=api_url, req_args=req_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/base_client.py", line 200, in _sync_send
+    return self._urllib_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/base_client.py", line 331, in _urllib_api_call
+    ).validate()
+      ^^^^^^^^^^
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/slack_response.py", line 197, in validate
+    raise e.SlackApiError(message=msg, response=self)
+slack_sdk.errors.SlackApiError: The request to the Slack API failed. (url: https://slack.com/api/auth.test)
+The server responded with: {'ok': False, 'error': 'not_authed'}
+2026-03-11 12:41:32,134 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:41:32,135 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 12:41:32,135 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:41:32,135 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 12:41:32,135 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 12:41:32,136 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 12:41:32,136 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 12:41:32,136 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 12:41:32,136 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 12:41:32,136 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 12:41:32,205 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 12:41:32,205 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 12:41:32,205 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 12:41:32,205 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 12:41:32,205 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 12:41:32,205 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 12:41:32,205 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 12:41:32,205 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 12:41:32,205 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 12:41:32,205 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 12:41:32,205 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 12:41:32,206 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 12:41:32,206 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 12:41:32,206 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 12:41:32,207 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 12:41:32,207 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 12:41:32,207 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 12:41:32,207 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 12:41:32,377 [ERROR] slack-ai-assistant.slack: Failed to start Slack app: The request to the Slack API failed. (url: https://slack.com/api/auth.test)
+The server responded with: {'ok': False, 'error': 'not_authed'}
+2026-03-11 12:41:32,377 [ERROR] slack-ai-assistant: Failed to start application: The request to the Slack API failed. (url: https://slack.com/api/auth.test)
+The server responded with: {'ok': False, 'error': 'not_authed'}
+Traceback (most recent call last):
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/src/slack_ai_assistant/main.py", line 78, in main
+    await slack_module.start_slack_app()
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/src/slack_ai_assistant/channels/slack.py", line 318, in start_slack_app
+    client.client.auth_test()
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/client.py", line 2132, in auth_test
+    return self.api_call("auth.test", params=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/base_client.py", line 169, in api_call
+    return self._sync_send(api_url=api_url, req_args=req_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/base_client.py", line 200, in _sync_send
+    return self._urllib_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/base_client.py", line 331, in _urllib_api_call
+    ).validate()
+      ^^^^^^^^^^
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/slack_response.py", line 197, in validate
+    raise e.SlackApiError(message=msg, response=self)
+slack_sdk.errors.SlackApiError: The request to the Slack API failed. (url: https://slack.com/api/auth.test)
+The server responded with: {'ok': False, 'error': 'not_authed'}
+2026-03-11 12:47:46,980 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:47:46,980 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 12:47:46,980 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:47:46,980 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 12:47:46,980 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 12:47:46,984 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 12:47:46,984 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 12:47:46,984 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 12:47:46,984 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 12:47:46,984 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 12:47:47,068 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 12:47:47,069 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 12:47:47,069 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 12:47:47,069 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 12:47:47,069 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 12:47:47,069 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 12:47:47,069 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 12:47:47,069 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 12:47:47,069 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 12:47:47,069 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 12:47:47,069 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 12:47:47,070 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 12:47:47,070 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 12:47:47,070 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 12:47:47,073 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 12:47:47,073 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 12:47:47,073 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 12:47:47,073 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 12:47:47,270 [ERROR] slack-ai-assistant.slack: Failed to start Slack app: The request to the Slack API failed. (url: https://slack.com/api/auth.test)
+The server responded with: {'ok': False, 'error': 'not_authed'}
+2026-03-11 12:47:47,271 [ERROR] slack-ai-assistant: Failed to start application: The request to the Slack API failed. (url: https://slack.com/api/auth.test)
+The server responded with: {'ok': False, 'error': 'not_authed'}
+Traceback (most recent call last):
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/src/slack_ai_assistant/main.py", line 78, in main
+    await slack_module.start_slack_app()
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/src/slack_ai_assistant/channels/slack.py", line 318, in start_slack_app
+    client.client.auth_test()
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/client.py", line 2132, in auth_test
+    return self.api_call("auth.test", params=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/base_client.py", line 169, in api_call
+    return self._sync_send(api_url=api_url, req_args=req_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/base_client.py", line 200, in _sync_send
+    return self._urllib_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/base_client.py", line 331, in _urllib_api_call
+    ).validate()
+      ^^^^^^^^^^
+  File "/Users/vishnuvalsalan/LearningProjects/Slack-ClawdBot-main/.venv/lib/python3.12/site-packages/slack_sdk/web/slack_response.py", line 197, in validate
+    raise e.SlackApiError(message=msg, response=self)
+slack_sdk.errors.SlackApiError: The request to the Slack API failed. (url: https://slack.com/api/auth.test)
+The server responded with: {'ok': False, 'error': 'not_authed'}
+2026-03-11 12:53:09,461 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:53:09,462 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 12:53:09,462 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:53:09,462 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 12:53:09,462 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 12:53:09,466 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 12:53:09,466 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 12:53:09,466 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 12:53:09,466 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 12:53:09,466 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 12:53:09,534 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 12:53:09,535 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 12:53:09,535 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 12:53:09,535 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 12:53:09,535 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 12:53:09,535 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 12:53:09,535 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 12:53:09,535 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 12:53:09,535 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 12:53:09,535 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 12:53:09,535 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 12:53:09,537 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 12:53:09,537 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 12:53:09,537 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 12:53:09,537 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 12:53:09,537 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 12:53:09,537 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 12:53:09,537 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 12:53:09,740 [INFO] slack-ai-assistant.slack: Slack app started
+2026-03-11 12:53:09,740 [INFO] slack-ai-assistant: Slack app started
+2026-03-11 12:53:09,740 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:53:09,740 [INFO] slack-ai-assistant: Slack AI Assistant v2 is running!
+2026-03-11 12:53:09,740 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:53:09,740 [INFO] slack-ai-assistant: Features enabled:
+2026-03-11 12:53:09,740 [INFO] slack-ai-assistant:   • RAG: yes
+2026-03-11 12:53:09,740 [INFO] slack-ai-assistant:   • Memory: no
+2026-03-11 12:53:09,740 [INFO] slack-ai-assistant:   • MCP: no
+2026-03-11 12:53:09,740 [INFO] slack-ai-assistant:   • Scheduler: yes
+2026-03-11 12:53:09,741 [INFO] slack-ai-assistant:   • Model: claude-sonnet-4-20250514
+2026-03-11 12:53:09,741 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:53:09,741 [INFO] slack-ai-assistant: Press Ctrl+C to stop
+2026-03-11 12:55:40,410 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:55:40,410 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 12:55:40,410 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:55:40,410 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 12:55:40,410 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 12:55:40,414 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 12:55:40,414 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 12:55:40,414 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 12:55:40,414 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 12:55:40,414 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 12:55:40,491 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 12:55:40,491 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 12:55:40,491 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 12:55:40,491 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 12:55:40,491 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 12:55:40,491 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 12:55:40,491 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 12:55:40,491 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 12:55:40,491 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 12:55:40,491 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 12:55:40,491 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 12:55:40,493 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 12:55:40,493 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 12:55:40,493 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 12:55:40,493 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 12:55:40,493 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 12:55:40,493 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 12:55:40,493 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 12:55:40,708 [INFO] slack-ai-assistant.slack: Slack app started
+2026-03-11 12:55:40,708 [INFO] slack-ai-assistant: Slack app started
+2026-03-11 12:55:40,708 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:55:40,708 [INFO] slack-ai-assistant: Slack AI Assistant v2 is running!
+2026-03-11 12:55:40,708 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:55:40,708 [INFO] slack-ai-assistant: Features enabled:
+2026-03-11 12:55:40,708 [INFO] slack-ai-assistant:   • RAG: yes
+2026-03-11 12:55:40,708 [INFO] slack-ai-assistant:   • Memory: no
+2026-03-11 12:55:40,708 [INFO] slack-ai-assistant:   • MCP: no
+2026-03-11 12:55:40,708 [INFO] slack-ai-assistant:   • Scheduler: yes
+2026-03-11 12:55:40,709 [INFO] slack-ai-assistant:   • Model: claude-sonnet-4-20250514
+2026-03-11 12:55:40,709 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 12:55:40,709 [INFO] slack-ai-assistant: Press Ctrl+C to stop
+2026-03-11 13:09:47,665 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:09:47,665 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 13:09:47,665 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:09:47,665 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 13:09:47,665 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 13:09:47,668 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 13:09:47,668 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 13:09:47,668 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 13:09:47,668 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 13:09:47,668 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 13:09:47,740 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 13:09:47,741 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 13:09:47,741 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 13:09:47,741 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 13:09:47,741 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 13:09:47,741 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 13:09:47,741 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 13:09:47,741 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 13:09:47,741 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 13:09:47,741 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 13:09:47,741 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 13:09:47,742 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 13:09:47,742 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 13:09:47,742 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 13:09:47,742 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 13:09:47,742 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 13:09:47,742 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 13:09:47,742 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 13:09:47,947 [INFO] slack-ai-assistant.slack: Slack app started
+2026-03-11 13:09:47,947 [INFO] slack-ai-assistant: Slack app started
+2026-03-11 13:09:47,948 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:09:47,948 [INFO] slack-ai-assistant: Slack AI Assistant v2 is running!
+2026-03-11 13:09:47,948 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:09:47,948 [INFO] slack-ai-assistant: Features enabled:
+2026-03-11 13:09:47,948 [INFO] slack-ai-assistant:   • RAG: yes
+2026-03-11 13:09:47,948 [INFO] slack-ai-assistant:   • Memory: no
+2026-03-11 13:09:47,948 [INFO] slack-ai-assistant:   • MCP: no
+2026-03-11 13:09:47,948 [INFO] slack-ai-assistant:   • Scheduler: yes
+2026-03-11 13:09:47,948 [INFO] slack-ai-assistant:   • Model: claude-sonnet-4-20250514
+2026-03-11 13:09:47,948 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:09:47,948 [INFO] slack-ai-assistant: Press Ctrl+C to stop
+2026-03-11 13:26:28,610 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:26:28,611 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 13:26:28,611 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:26:28,611 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 13:26:28,611 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 13:26:28,617 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 13:26:28,617 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 13:26:28,617 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 13:26:28,617 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 13:26:28,617 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 13:26:28,750 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 13:26:28,751 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 13:26:28,751 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 13:26:28,751 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 13:26:28,751 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 13:26:28,751 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 13:26:28,751 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 13:26:28,751 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 13:26:28,751 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 13:26:28,751 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 13:26:28,751 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 13:26:28,753 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 13:26:28,753 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 13:26:28,753 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 13:26:28,754 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 13:26:28,754 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 13:26:28,754 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 13:26:28,754 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 13:26:28,954 [INFO] slack-ai-assistant.slack: Slack app started
+2026-03-11 13:26:28,954 [INFO] slack-ai-assistant: Slack app started
+2026-03-11 13:26:28,954 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:26:28,955 [INFO] slack-ai-assistant: Slack AI Assistant v2 is running!
+2026-03-11 13:26:28,955 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:26:28,955 [INFO] slack-ai-assistant: Features enabled:
+2026-03-11 13:26:28,955 [INFO] slack-ai-assistant:   • RAG: yes
+2026-03-11 13:26:28,955 [INFO] slack-ai-assistant:   • Memory: no
+2026-03-11 13:26:28,955 [INFO] slack-ai-assistant:   • MCP: no
+2026-03-11 13:26:28,955 [INFO] slack-ai-assistant:   • Scheduler: yes
+2026-03-11 13:26:28,955 [INFO] slack-ai-assistant:   • Model: claude-sonnet-4-20250514
+2026-03-11 13:26:28,955 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:26:28,955 [INFO] slack-ai-assistant: Press Ctrl+C to stop
+2026-03-11 13:40:34,708 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:40:34,708 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 13:40:34,708 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:40:34,708 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 13:40:34,708 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 13:40:34,719 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 13:40:34,719 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 13:40:34,719 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 13:40:34,720 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 13:40:34,720 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 13:40:34,791 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 13:40:34,792 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 13:40:34,792 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 13:40:34,792 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 13:40:34,792 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 13:40:34,792 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 13:40:34,792 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 13:40:34,792 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 13:40:34,792 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 13:40:34,792 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 13:40:34,792 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 13:40:34,793 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 13:40:34,793 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 13:40:34,793 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 13:40:34,793 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 13:40:34,793 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 13:40:34,793 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 13:40:34,793 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 13:40:35,001 [INFO] slack-ai-assistant.slack: Slack app started
+2026-03-11 13:40:35,001 [INFO] slack-ai-assistant: Slack app started
+2026-03-11 13:40:35,001 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:40:35,001 [INFO] slack-ai-assistant: Slack AI Assistant v2 is running!
+2026-03-11 13:40:35,001 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:40:35,001 [INFO] slack-ai-assistant: Features enabled:
+2026-03-11 13:40:35,001 [INFO] slack-ai-assistant:   • RAG: yes
+2026-03-11 13:40:35,001 [INFO] slack-ai-assistant:   • Memory: no
+2026-03-11 13:40:35,001 [INFO] slack-ai-assistant:   • MCP: no
+2026-03-11 13:40:35,002 [INFO] slack-ai-assistant:   • Scheduler: yes
+2026-03-11 13:40:35,002 [INFO] slack-ai-assistant:   • Model: claude-sonnet-4-20250514
+2026-03-11 13:40:35,002 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:40:35,002 [INFO] slack-ai-assistant: Press Ctrl+C to stop
+2026-03-11 13:43:29,272 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:43:29,272 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 13:43:29,272 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:43:29,272 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 13:43:29,272 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 13:43:29,276 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 13:43:29,276 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 13:43:29,276 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 13:43:29,276 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 13:43:29,276 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 13:43:29,348 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 13:43:29,348 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 13:43:29,348 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 13:43:29,348 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 13:43:29,348 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 13:43:29,348 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 13:43:29,348 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 13:43:29,348 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 13:43:29,348 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 13:43:29,348 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 13:43:29,348 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 13:43:29,350 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 13:43:29,350 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 13:43:29,350 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 13:43:29,350 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 13:43:29,350 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 13:43:29,350 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 13:43:29,350 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 13:43:29,549 [INFO] slack-ai-assistant.slack: Slack app started
+2026-03-11 13:43:29,549 [INFO] slack-ai-assistant: Slack app started
+2026-03-11 13:43:29,549 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:43:29,549 [INFO] slack-ai-assistant: Slack AI Assistant v2 is running!
+2026-03-11 13:43:29,549 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:43:29,549 [INFO] slack-ai-assistant: Features enabled:
+2026-03-11 13:43:29,549 [INFO] slack-ai-assistant:   • RAG: yes
+2026-03-11 13:43:29,549 [INFO] slack-ai-assistant:   • Memory: no
+2026-03-11 13:43:29,549 [INFO] slack-ai-assistant:   • MCP: no
+2026-03-11 13:43:29,549 [INFO] slack-ai-assistant:   • Scheduler: yes
+2026-03-11 13:43:29,550 [INFO] slack-ai-assistant:   • Model: claude-sonnet-4-20250514
+2026-03-11 13:43:29,550 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:43:29,550 [INFO] slack-ai-assistant: Press Ctrl+C to stop
+2026-03-11 13:47:46,162 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:47:46,162 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 13:47:46,162 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:47:46,162 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 13:47:46,162 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 13:47:46,167 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 13:47:46,167 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 13:47:46,167 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 13:47:46,167 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 13:47:46,167 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 13:47:46,256 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 13:47:46,256 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 13:47:46,256 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 13:47:46,256 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 13:47:46,256 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 13:47:46,256 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 13:47:46,256 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 13:47:46,256 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 13:47:46,256 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 13:47:46,256 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 13:47:46,256 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 13:47:46,258 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 13:47:46,258 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 13:47:46,258 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 13:47:46,258 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 13:47:46,258 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 13:47:46,258 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 13:47:46,258 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 13:47:46,468 [INFO] slack-ai-assistant.slack: Slack app started
+2026-03-11 13:47:46,469 [INFO] slack-ai-assistant: Slack app started
+2026-03-11 13:47:46,469 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:47:46,469 [INFO] slack-ai-assistant: Slack AI Assistant v2 is running!
+2026-03-11 13:47:46,469 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:47:46,469 [INFO] slack-ai-assistant: Features enabled:
+2026-03-11 13:47:46,469 [INFO] slack-ai-assistant:   • RAG: yes
+2026-03-11 13:47:46,469 [INFO] slack-ai-assistant:   • Memory: no
+2026-03-11 13:47:46,469 [INFO] slack-ai-assistant:   • MCP: no
+2026-03-11 13:47:46,469 [INFO] slack-ai-assistant:   • Scheduler: yes
+2026-03-11 13:47:46,469 [INFO] slack-ai-assistant:   • Model: claude-sonnet-4-20250514
+2026-03-11 13:47:46,469 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:47:46,469 [INFO] slack-ai-assistant: Press Ctrl+C to stop
+2026-03-11 13:48:58,144 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:48:58,144 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 13:48:58,144 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:48:58,144 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 13:48:58,144 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 13:48:58,148 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 13:48:58,148 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 13:48:58,148 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 13:48:58,148 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 13:48:58,148 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 13:48:58,223 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 13:48:58,223 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 13:48:58,223 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 13:48:58,223 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 13:48:58,223 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 13:48:58,223 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 13:48:58,223 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 13:48:58,223 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 13:48:58,223 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 13:48:58,223 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 13:48:58,223 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 13:48:58,224 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 13:48:58,224 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 13:48:58,224 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 13:48:58,224 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 13:48:58,224 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 13:48:58,224 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 13:48:58,224 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 13:48:58,418 [INFO] slack-ai-assistant.slack: Slack app started
+2026-03-11 13:48:58,418 [INFO] slack-ai-assistant: Slack app started
+2026-03-11 13:48:58,418 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:48:58,418 [INFO] slack-ai-assistant: Slack AI Assistant v2 is running!
+2026-03-11 13:48:58,418 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:48:58,418 [INFO] slack-ai-assistant: Features enabled:
+2026-03-11 13:48:58,418 [INFO] slack-ai-assistant:   • RAG: yes
+2026-03-11 13:48:58,418 [INFO] slack-ai-assistant:   • Memory: no
+2026-03-11 13:48:58,418 [INFO] slack-ai-assistant:   • MCP: no
+2026-03-11 13:48:58,418 [INFO] slack-ai-assistant:   • Scheduler: yes
+2026-03-11 13:48:58,418 [INFO] slack-ai-assistant:   • Model: claude-sonnet-4-20250514
+2026-03-11 13:48:58,418 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:48:58,419 [INFO] slack-ai-assistant: Press Ctrl+C to stop
+2026-03-11 13:54:35,754 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:54:35,754 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 13:54:35,754 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:54:35,754 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 13:54:35,754 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 13:54:35,758 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 13:54:35,758 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 13:54:35,758 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 13:54:35,758 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 13:54:35,758 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 13:54:35,834 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 13:54:35,835 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 13:54:35,835 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 13:54:35,835 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 13:54:35,835 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 13:54:35,835 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 13:54:35,835 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 13:54:35,835 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 13:54:35,835 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 13:54:35,835 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 13:54:35,835 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 13:54:35,836 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 13:54:35,836 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 13:54:35,836 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 13:54:35,836 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 13:54:35,836 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 13:54:35,836 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 13:54:35,836 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 13:54:36,034 [INFO] slack-ai-assistant.slack: Slack app started
+2026-03-11 13:54:36,035 [INFO] slack-ai-assistant: Slack app started
+2026-03-11 13:54:36,035 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:54:36,035 [INFO] slack-ai-assistant: Slack AI Assistant v2 is running!
+2026-03-11 13:54:36,035 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:54:36,035 [INFO] slack-ai-assistant: Features enabled:
+2026-03-11 13:54:36,035 [INFO] slack-ai-assistant:   • RAG: yes
+2026-03-11 13:54:36,035 [INFO] slack-ai-assistant:   • Memory: no
+2026-03-11 13:54:36,035 [INFO] slack-ai-assistant:   • MCP: no
+2026-03-11 13:54:36,035 [INFO] slack-ai-assistant:   • Scheduler: yes
+2026-03-11 13:54:36,035 [INFO] slack-ai-assistant:   • Model: claude-sonnet-4-20250514
+2026-03-11 13:54:36,035 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:54:36,035 [INFO] slack-ai-assistant: Press Ctrl+C to stop
+2026-03-11 13:55:28,411 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:55:28,411 [INFO] slack-ai-assistant: Starting Slack AI Assistant v2 (Python)
+2026-03-11 13:55:28,411 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:55:28,411 [INFO] slack-ai-assistant: Initializing database...
+2026-03-11 13:55:28,411 [INFO] slack-ai-assistant.database: Initializing database schema...
+2026-03-11 13:55:28,415 [INFO] slack-ai-assistant.database: Database schema initialized
+2026-03-11 13:55:28,415 [INFO] slack-ai-assistant.database: Database ready
+2026-03-11 13:55:28,415 [INFO] slack-ai-assistant: Database initialized
+2026-03-11 13:55:28,415 [INFO] slack-ai-assistant: Initializing RAG system...
+2026-03-11 13:55:28,415 [INFO] slack-ai-assistant.rag: Initializing RAG system...
+2026-03-11 13:55:28,487 [INFO] slack-ai-assistant.rag: RAG initialized with 0 documents
+2026-03-11 13:55:28,487 [INFO] slack-ai-assistant: Vector store initialized (0 documents)
+2026-03-11 13:55:28,487 [INFO] slack-ai-assistant.rag: Background indexer started
+2026-03-11 13:55:28,487 [INFO] slack-ai-assistant: Background indexer started
+2026-03-11 13:55:28,487 [INFO] slack-ai-assistant: Initializing memory system...
+2026-03-11 13:55:28,487 [WARNING] slack-ai-assistant.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 13:55:28,487 [WARNING] slack-ai-assistant.memory: Memory client not initialized - no API key
+2026-03-11 13:55:28,487 [WARNING] slack-ai-assistant: Memory system failed to initialize
+2026-03-11 13:55:28,487 [INFO] slack-ai-assistant: Initializing MCP servers...
+2026-03-11 13:55:28,487 [INFO] slack-ai-assistant: No MCP servers connected
+2026-03-11 13:55:28,487 [INFO] slack-ai-assistant: Starting task scheduler...
+2026-03-11 13:55:28,488 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 13:55:28,488 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 13:55:28,488 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 13:55:28,488 [INFO] slack-ai-assistant.scheduler: Task scheduler started
+2026-03-11 13:55:28,489 [INFO] slack-ai-assistant: Task scheduler started
+2026-03-11 13:55:28,489 [INFO] slack-ai-assistant: Starting Slack app...
+2026-03-11 13:55:28,489 [INFO] slack-ai-assistant.slack: Starting Slack app...
+2026-03-11 13:55:28,993 [INFO] slack-ai-assistant.slack: Slack app started
+2026-03-11 13:55:28,993 [INFO] slack-ai-assistant: Slack app started
+2026-03-11 13:55:28,993 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:55:28,994 [INFO] slack-ai-assistant: Slack AI Assistant v2 is running!
+2026-03-11 13:55:28,994 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:55:28,994 [INFO] slack-ai-assistant: Features enabled:
+2026-03-11 13:55:28,994 [INFO] slack-ai-assistant:   • RAG: yes
+2026-03-11 13:55:28,994 [INFO] slack-ai-assistant:   • Memory: no
+2026-03-11 13:55:28,994 [INFO] slack-ai-assistant:   • MCP: no
+2026-03-11 13:55:28,995 [INFO] slack-ai-assistant:   • Scheduler: yes
+2026-03-11 13:55:28,995 [INFO] slack-ai-assistant:   • Model: claude-sonnet-4-20250514
+2026-03-11 13:55:28,995 [INFO] slack-ai-assistant: ==================================================
+2026-03-11 13:55:28,995 [INFO] slack-ai-assistant: Press Ctrl+C to stop
+2026-03-11 17:09:47,193 [INFO] vv-clawbot: ==================================================
+2026-03-11 17:09:47,193 [INFO] vv-clawbot: Starting vv-clawbot (Python)
+2026-03-11 17:09:47,193 [INFO] vv-clawbot: ==================================================
+2026-03-11 17:09:47,193 [INFO] vv-clawbot: Initializing database...
+2026-03-11 17:09:47,194 [INFO] vv-clawbot.database: Initializing database schema...
+2026-03-11 17:09:47,200 [INFO] vv-clawbot.database: Database schema initialized
+2026-03-11 17:09:47,200 [INFO] vv-clawbot.database: Database ready
+2026-03-11 17:09:47,200 [INFO] vv-clawbot: Database initialized
+2026-03-11 17:09:47,200 [INFO] vv-clawbot: Initializing RAG system...
+2026-03-11 17:09:47,200 [INFO] vv-clawbot.rag: Initializing RAG system...
+2026-03-11 17:09:47,330 [INFO] vv-clawbot.rag: RAG initialized with 0 documents
+2026-03-11 17:09:47,330 [INFO] vv-clawbot: Vector store initialized (0 documents)
+2026-03-11 17:09:47,331 [INFO] vv-clawbot.rag: Background indexer started
+2026-03-11 17:09:47,331 [INFO] vv-clawbot: Background indexer started
+2026-03-11 17:09:47,331 [INFO] vv-clawbot: Initializing memory system...
+2026-03-11 17:09:47,331 [WARNING] vv-clawbot.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 17:09:47,331 [WARNING] vv-clawbot.memory: Memory client not initialized - no API key
+2026-03-11 17:09:47,331 [WARNING] vv-clawbot: Memory system failed to initialize
+2026-03-11 17:09:47,331 [INFO] vv-clawbot: Initializing MCP servers...
+2026-03-11 17:09:47,331 [INFO] vv-clawbot: No MCP servers connected
+2026-03-11 17:09:47,331 [INFO] vv-clawbot: Starting task scheduler...
+2026-03-11 17:09:47,334 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 17:09:47,334 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 17:09:47,334 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 17:09:47,335 [INFO] vv-clawbot.scheduler: Task scheduler started
+2026-03-11 17:09:47,335 [INFO] vv-clawbot: Task scheduler started
+2026-03-11 17:09:47,335 [INFO] vv-clawbot: Starting Slack app...
+2026-03-11 17:09:47,335 [INFO] vv-clawbot.slack: Starting Slack app...
+2026-03-11 17:09:47,639 [INFO] vv-clawbot.slack: Slack app started
+2026-03-11 17:09:47,639 [INFO] vv-clawbot: Slack app started
+2026-03-11 17:09:47,639 [INFO] vv-clawbot: ==================================================
+2026-03-11 17:09:47,639 [INFO] vv-clawbot: vv-clawbot is running!
+2026-03-11 17:09:47,639 [INFO] vv-clawbot: ==================================================
+2026-03-11 17:09:47,639 [INFO] vv-clawbot: Features enabled:
+2026-03-11 17:09:47,639 [INFO] vv-clawbot:   • RAG: yes
+2026-03-11 17:09:47,639 [INFO] vv-clawbot:   • Memory: no
+2026-03-11 17:09:47,639 [INFO] vv-clawbot:   • MCP: no
+2026-03-11 17:09:47,639 [INFO] vv-clawbot:   • Scheduler: yes
+2026-03-11 17:09:47,639 [INFO] vv-clawbot:   • Model: claude-sonnet-4-20250514
+2026-03-11 17:09:47,639 [INFO] vv-clawbot: ==================================================
+2026-03-11 17:09:47,639 [INFO] vv-clawbot: Press Ctrl+C to stop
+2026-03-11 17:15:51,199 [INFO] vv-clawbot: ==================================================
+2026-03-11 17:15:51,199 [INFO] vv-clawbot: Starting vv-clawbot (Python)
+2026-03-11 17:15:51,199 [INFO] vv-clawbot: ==================================================
+2026-03-11 17:15:51,199 [INFO] vv-clawbot: Initializing database...
+2026-03-11 17:15:51,199 [INFO] vv-clawbot.database: Initializing database schema...
+2026-03-11 17:15:51,204 [INFO] vv-clawbot.database: Database schema initialized
+2026-03-11 17:15:51,204 [INFO] vv-clawbot.database: Database ready
+2026-03-11 17:15:51,204 [INFO] vv-clawbot: Database initialized
+2026-03-11 17:15:51,204 [INFO] vv-clawbot: Initializing RAG system...
+2026-03-11 17:15:51,204 [INFO] vv-clawbot.rag: Initializing RAG system...
+2026-03-11 17:15:51,292 [INFO] vv-clawbot.rag: RAG initialized with 0 documents
+2026-03-11 17:15:51,293 [INFO] vv-clawbot: Vector store initialized (0 documents)
+2026-03-11 17:15:51,293 [INFO] vv-clawbot.rag: Background indexer started
+2026-03-11 17:15:51,293 [INFO] vv-clawbot: Background indexer started
+2026-03-11 17:15:51,293 [INFO] vv-clawbot: Initializing memory system...
+2026-03-11 17:15:51,293 [WARNING] vv-clawbot.memory: No API key configured for memory; disabling mem0 integration
+2026-03-11 17:15:51,293 [WARNING] vv-clawbot.memory: Memory client not initialized - no API key
+2026-03-11 17:15:51,293 [WARNING] vv-clawbot: Memory system failed to initialize
+2026-03-11 17:15:51,293 [INFO] vv-clawbot: Initializing MCP servers...
+2026-03-11 17:15:51,293 [INFO] vv-clawbot: No MCP servers connected
+2026-03-11 17:15:51,293 [INFO] vv-clawbot: Starting task scheduler...
+2026-03-11 17:15:51,295 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-11 17:15:51,295 [INFO] apscheduler.scheduler: Added job "TaskScheduler._check_pending_tasks" to job store "default"
+2026-03-11 17:15:51,295 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-11 17:15:51,295 [INFO] vv-clawbot.scheduler: Task scheduler started
+2026-03-11 17:15:51,295 [INFO] vv-clawbot: Task scheduler started
+2026-03-11 17:15:51,296 [INFO] vv-clawbot: Starting Slack app...
+2026-03-11 17:15:51,296 [INFO] vv-clawbot.slack: Starting Slack app...
+2026-03-11 17:15:51,510 [INFO] vv-clawbot.slack: Slack app started
+2026-03-11 17:15:51,510 [INFO] vv-clawbot: Slack app started
+2026-03-11 17:15:51,510 [INFO] vv-clawbot: ==================================================
+2026-03-11 17:15:51,510 [INFO] vv-clawbot: vv-clawbot is running!
+2026-03-11 17:15:51,510 [INFO] vv-clawbot: ==================================================
+2026-03-11 17:15:51,510 [INFO] vv-clawbot: Features enabled:
+2026-03-11 17:15:51,510 [INFO] vv-clawbot:   • RAG: yes
+2026-03-11 17:15:51,510 [INFO] vv-clawbot:   • Memory: no
+2026-03-11 17:15:51,510 [INFO] vv-clawbot:   • MCP: no
+2026-03-11 17:15:51,510 [INFO] vv-clawbot:   • Scheduler: yes
+2026-03-11 17:15:51,510 [INFO] vv-clawbot:   • Model: claude-sonnet-4-20250514
+2026-03-11 17:15:51,510 [INFO] vv-clawbot: ==================================================
+2026-03-11 17:15:51,510 [INFO] vv-clawbot: Press Ctrl+C to stop

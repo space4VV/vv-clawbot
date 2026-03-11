@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: slack-ai-assistant
+Version: 2.0.0
+Summary: Advanced Slack AI Assistant with RAG, Memory, and MCP support
+Requires-Python: >=3.12
+Requires-Dist: anthropic>=0.25.0
+Requires-Dist: slack-sdk>=3.27.0
+Requires-Dist: openai>=1.67.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: pydantic-settings>=2.0.0
+Requires-Dist: chromadb>=0.4.0
+Requires-Dist: mem0ai>=1.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: apscheduler>=3.10.0
+Requires-Dist: aiosqlite>=0.19.0
+Provides-Extra: dev
+Requires-Dist: ruff>=0.8.0; extra == "dev"
+Requires-Dist: mypy>=1.8.0; extra == "dev"
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.23.0; extra == "dev"
+Requires-Dist: pre-commit>=3.6.0; extra == "dev"
