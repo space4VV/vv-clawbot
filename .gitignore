@@ -38,9 +38,10 @@ wheels/
 venv/
 ENV/
 
-# IDE
+# IDE and editor
 .idea/
 .vscode/
+.cursor/
 *.swp
 *.swo
 
@@ -48,6 +49,7 @@ ENV/
 data/
 *.db
 logs/
+*.log
 
 # OS
 .DS_Store
