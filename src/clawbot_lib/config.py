@@ -2,8 +2,13 @@
 
 import os
 
-from pydantic import Field, field_validator
+from dotenv import load_dotenv
+
+from pydantic import Field, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+# Load .env before any Settings are built so nested models see env vars (e.g. AI_OPENAI_API_KEY).
+load_dotenv()
 
 
 class SlackSettings(BaseSettings):
@@ -25,6 +30,13 @@ class AISettings(BaseSettings):
     default_model: str = Field(default="claude-sonnet-4-20250514", validation_alias="DEFAULT_MODEL")
 
     model_config = SettingsConfigDict(env_prefix="AI_", populate_by_name=True)
+
+    @model_validator(mode="after")
+    def fill_openai_key_from_ai_prefix(self: "AISettings") -> "AISettings":
+        """Use AI_OPENAI_API_KEY if openai_api_key was not set (e.g. only OPENAI_API_KEY checked)."""
+        if not self.openai_api_key:
+            self.openai_api_key = os.environ.get("AI_OPENAI_API_KEY") or None
+        return self
 
 
 class RagSettings(BaseSettings):

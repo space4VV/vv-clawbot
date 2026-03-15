@@ -93,6 +93,12 @@ async def main() -> None:
         logger.info("=" * 50)
         logger.info("Press Ctrl+C to stop")
 
+        # Keep the process and event loop running until shutdown (Ctrl+C).
+        _shutdown_event = asyncio.Event()
+        _register_shutdown_event(_shutdown_event)
+        await _shutdown_event.wait()
+        await shutdown(_shutdown_signal_name)
+
     except Exception as e:
         logger.error(f"Failed to start application: {e}", exc_info=True)
         sys.exit(1)
@@ -133,15 +139,22 @@ async def shutdown(signal_name: str) -> None:
         sys.exit(1)
 
 
+_shutdown_event: asyncio.Event | None = None
+_shutdown_signal_name: str = "SIGTERM"
+
+
+def _register_shutdown_event(ev: asyncio.Event) -> None:
+    """Register the event to set on SIGINT/SIGTERM so main() unblocks."""
+    global _shutdown_event
+    _shutdown_event = ev
+
+
 def _handle_signal(signum: int, _frame: object) -> None:
-    """Handle shutdown signals by scheduling graceful shutdown."""
-    sig_name = "SIGINT" if signum == signal.SIGINT else "SIGTERM"
-    try:
-        loop = asyncio.get_running_loop()
-        loop.call_soon_threadsafe(lambda: asyncio.ensure_future(shutdown(sig_name), loop=loop))
-    except RuntimeError:
-        # No running loop - process not fully started
-        sys.exit(0)
+    """Handle shutdown signals by unblocking main() so it can run shutdown()."""
+    global _shutdown_signal_name
+    _shutdown_signal_name = "SIGINT" if signum == signal.SIGINT else "SIGTERM"
+    if _shutdown_event is not None:
+        _shutdown_event.set()
 
 
 def run() -> None:

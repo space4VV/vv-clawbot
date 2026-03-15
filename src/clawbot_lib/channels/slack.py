@@ -322,6 +322,19 @@ def format_messages_for_context(messages: list[SlackMessage]) -> str:
 # Global client and Socket Mode instances
 _slack_client: SlackClient | None = None
 _socket_client: SocketModeClient | None = None
+_bot_user_id: str | None = None
+
+
+def _get_bot_user_id(web_client: WebClient) -> str | None:
+    """Return the bot's Slack user ID (cached after first auth_test)."""
+    global _bot_user_id
+    if _bot_user_id is None:
+        try:
+            resp = web_client.auth_test()
+            _bot_user_id = resp.get("user_id")
+        except SlackApiError:
+            pass
+    return _bot_user_id
 
 
 def get_slack_client() -> SlackClient:
@@ -344,9 +357,11 @@ async def start_slack_app() -> None:
     logger.info("Starting Slack app...")
     slack_client = get_slack_client()
 
-    # First, verify the bot token is valid.
+    # First, verify the bot token is valid and cache bot user ID for mention checks.
+    global _bot_user_id
     try:
-        slack_client.client.auth_test()
+        resp = slack_client.client.auth_test()
+        _bot_user_id = resp.get("user_id")
     except SlackApiError as e:
         logger.error(f"Failed to start Slack app: {e}")
         raise
@@ -370,16 +385,33 @@ async def start_slack_app() -> None:
         if not event:
             return
 
-        if event.get("type") != "message":
-            return
+        event_type = event.get("type")
 
-        # Ignore messages from bots (including ourselves).
-        if event.get("bot_id"):
+        # Handle both message (DMs, some channel messages) and app_mention (@bot in channels).
+        if event_type == "app_mention":
+            # Channel @mentions: process and respond.
+            pass
+        elif event_type == "message":
+            # Ignore messages from bots (including ourselves).
+            if event.get("bot_id"):
+                return
+            # In channels, only respond when the bot is mentioned (message events may still fire).
+            # If we only subscribed to app_mention for channels, this branch is mainly for DMs.
+            channel_id = event.get("channel", "")
+            if channel_id.startswith("C"):
+                text = (event.get("text", "") or "").strip()
+                bot_user_id = _get_bot_user_id(slack_client.client)
+                if bot_user_id and f"<@{bot_user_id}>" not in text:
+                    return  # Channel message without @mention – ignore
+        else:
             return
 
         user_id = event.get("user")
         channel_id = event.get("channel")
-        text = event.get("text", "") or ""
+        text = (event.get("text", "") or "").strip()
+        # Strip bot mention so the agent sees "hello" not "<@Uxxx> hello".
+        if _bot_user_id and f"<@{_bot_user_id}>" in text:
+            text = text.replace(f"<@{_bot_user_id}>", "").strip()
         thread_ts = event.get("thread_ts")
         ts = event.get("ts")
 

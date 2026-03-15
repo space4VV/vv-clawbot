@@ -10,6 +10,13 @@ __pycache__/
 *.so
 .Python
 build/
+
+# Cython
+*.c
+*.cpp
+*.pyd
+*.pyx
+cython_debug/
 develop-eggs/
 dist/
 downloads/
@@ -39,6 +46,7 @@ ENV/
 # Data and local state
 data/
 *.db
+logs/
 
 # OS
 .DS_Store

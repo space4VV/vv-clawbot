@@ -548,7 +548,8 @@ async def process_message(
 
     # Add conversation history
     for msg in history[-10:]:
-        messages.append({"role": msg.role.value, "content": msg.content})
+        _role = getattr(msg.role, "value", msg.role)
+        messages.append({"role": _role, "content": msg.content})
 
     messages.append({"role": "user", "content": user_message})
 
@@ -643,7 +644,9 @@ async def summarize_thread(
     if not messages:
         return "No messages to summarize."
 
-    conversation = "\n\n".join(f"[{msg.role.value}]: {msg.content}" for msg in messages)
+    conversation = "\n\n".join(
+        f"[{getattr(msg.role, 'value', msg.role)}]: {msg.content}" for msg in messages
+    )
 
     prompt = f"""Please summarize this Slack conversation:
 1. Key topics discussed
